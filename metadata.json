@@ -1,0 +1,8 @@
+{
+  "name": "QuoteTonic V2.5",
+  "description": "A no-code, customizable quotation and document automation service for freelancers, agencies, and B2B sales teams.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
