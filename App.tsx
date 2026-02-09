@@ -17,7 +17,7 @@ import ReactGA from 'react-ga4';
 import SEO from './components/SEO';
 
 // Initialize GA4 - Replace with your Measurement ID
-const GA_MEASUREMENT_ID = 'G-PYV855146J'; // Placeholder
+const GA_MEASUREMENT_ID = 'G-PX7LY0471G'; // QuoteTonic Production ID
 ReactGA.initialize(GA_MEASUREMENT_ID);
 
 const AppContent = () => {
