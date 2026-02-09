@@ -13,10 +13,22 @@ import { QuoteProvider, useQuotes } from './contexts/QuoteContext';
 import { SettingsProvider, useSettings } from './contexts/SettingsContext';
 import { TutorialProvider, useTutorial } from './contexts/TutorialContext';
 
+import ReactGA from 'react-ga4';
+import SEO from './components/SEO';
+
+// Initialize GA4 - Replace with your Measurement ID
+const GA_MEASUREMENT_ID = 'G-PYV855146J'; // Placeholder
+ReactGA.initialize(GA_MEASUREMENT_ID);
+
 const AppContent = () => {
   const { activeTab, setActiveTab, isEditing, createQuote } = useQuotes();
   const { settings, updateSettings } = useSettings();
   const { showTutorial, tutorialStep, setStep } = useTutorial();
+
+  // Track page views
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
+  }, []);
 
   const [isTemplateModalOpen, setIsTemplateModalOpen] = useState(false);
 
@@ -32,22 +44,23 @@ const AppContent = () => {
 
     // 4. Handle Tutorial Progression
     if (showTutorial) {
-        if (tutorialStep === 1) setStep(2); // From New Doc -> Template Step (if manual)
-        if (tutorialStep === 2) setStep(3); // From Template -> Client Input
+      if (tutorialStep === 1) setStep(2); // From New Doc -> Template Step (if manual)
+      if (tutorialStep === 2) setStep(3); // From Template -> Client Input
     }
   };
 
   // Sync Tabs with Tutorial Steps (Auto-navigation)
   useEffect(() => {
-     if (!showTutorial) return;
-     if (tutorialStep === 8) setActiveTab('quotes');
-     if (tutorialStep === 10) setActiveTab('templates');
-     if (tutorialStep === 12) setActiveTab('settings');
+    if (!showTutorial) return;
+    if (tutorialStep === 8) setActiveTab('quotes');
+    if (tutorialStep === 10) setActiveTab('templates');
+    if (tutorialStep === 12) setActiveTab('settings');
   }, [tutorialStep, showTutorial, setActiveTab]);
 
   return (
     <Layout onCreateNew={() => setIsTemplateModalOpen(true)}>
-      <TemplateSelectionModal 
+      <SEO />
+      <TemplateSelectionModal
         isOpen={isTemplateModalOpen}
         onClose={() => setIsTemplateModalOpen(false)}
         onSelect={(id) => handleCreateNew(id)}
