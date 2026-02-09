@@ -1,88 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuoteTonic - Smart Quotation SaaS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300..700&family=Noto+Sans+KR:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .font-playfair { font-family: 'Playfair Display', serif; }
-        .font-montserrat { font-family: 'Montserrat', sans-serif; }
-        .font-fira { font-family: 'Fira Code', monospace; }
-        .font-noto { font-family: 'Noto Sans KR', sans-serif; }
-        .font-roboto-slab { font-family: 'Roboto Slab', serif; }
-        
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
 
-        /* 매직 커서 커스텀 애니메이션 */
-        @keyframes magic-pulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.4; }
-            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-        }
-        @keyframes magic-expand {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
-            100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
-        }
-        @keyframes cursor-float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(5px, 5px); }
-        }
-        /* scale을 제거하여 getBoundingClientRect 좌표 흔들림 방지 */
-        @keyframes target-highlight {
-            0%, 100% { box-shadow: 0 0 0px rgba(79, 70, 229, 0); }
-            50% { box-shadow: 0 0 30px rgba(79, 70, 229, 0.5); border-color: #6366f1; }
-        }
-        .animate-magic-pulse {
-            animation: magic-pulse 2s infinite ease-in-out;
-        }
-        .animate-magic-expand {
-            animation: magic-expand 1.5s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .animate-cursor-float {
-            animation: cursor-float 3s infinite ease-in-out;
-        }
-        .animate-target-highlight {
-            animation: target-highlight 2s ease-in-out;
-        }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
-    "recharts": "https://esm.sh/recharts@^3.6.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "jspdf": "https://esm.sh/jspdf@^2.5.1",
-    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
-    "path": "https://esm.sh/path@^0.12.7",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "url": "https://esm.sh/url@^0.11.4"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300..700&family=Noto+Sans+KR:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/index.css">
 </head>
+
 <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
