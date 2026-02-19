@@ -13,7 +13,7 @@ const SEO: React.FC<SEOProps> = ({
     description = 'Create professional quotations in seconds with QuoteTonic. The smart SaaS solution for modern businesses.',
     keywords = 'quotation, invoice, estimate, saas, business tools, pdf generator',
     image = '/og-image.png',
-    url = 'https://www.quotetonic.com'
+    url = 'https://quotetonic.com'
 }) => {
     const siteTitle = title === 'QuoteTonic - Smart Quotation SaaS' ? title : `${title} | QuoteTonic`;
 
